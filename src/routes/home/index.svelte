@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Compose from '$root/components/compose.svelte'
 	import Tweet from '$root/components/tweet.svelte'
 	import type { TweetType } from '$root/types'
 
@@ -10,6 +11,8 @@
 </svelte:head>
 
 <h1>Feed</h1>
+
+<Compose />
 
 {#each tweets as tweet (tweet.id)}
 	<Tweet {tweet} />
