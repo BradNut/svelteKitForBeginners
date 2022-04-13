@@ -1,14 +1,17 @@
 <script lang="ts">
-import Navigation from "$root/components/navigation.svelte";
-import Trending from "$root/components/trending.svelte";
+	import { page } from '$app/stores'
 
-
+	import Navigation from "$root/components/navigation.svelte"
+	import Transition from '$root/components/transition.svelte';
+	import Trending from "$root/components/trending.svelte"
 </script>
 
 <div class="container">
   <Navigation />
   <main class="feed">
-    <slot />
+		<Transition url={$page.url}>
+    	<slot />
+		</Transition>
   </main>
   <Trending />
 </div>
