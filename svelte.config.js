@@ -16,7 +16,8 @@ const config = {
 					$root: path.resolve('./src')
 				}
 			}
-		}
+		},
+		methodOverride: { allowed: ['DELETE'] }
 	}
 };
 
